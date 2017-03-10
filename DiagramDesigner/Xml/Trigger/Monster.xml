@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>Monster</title>
+        <input>
+            <ID type="Integer">怪物ID</ID>
+            <name type="String">怪物名称</name>
+            <tag type="String">标志</tag>
+        </input>
+        <output>
+            <trigger type="MultiLinker"></trigger>
+        </output>
+    </node>

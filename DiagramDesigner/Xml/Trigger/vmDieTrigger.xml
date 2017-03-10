@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>vmDieTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>Exp</title>
+        <input>
+        	<exp type="MultiLinker">连接条件判断</exp>
+        </input>
+        <output>
+            <action type="MultiLinker">action</action>
+        </output>
+    </node>

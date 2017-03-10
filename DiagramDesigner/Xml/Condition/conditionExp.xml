@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>conditionExp</title>
+        <input>
+            <Linker type="Mutil">conditionExp</Linker>
+            <judgeNum type="InputInteger">判断条件数目</judgeNum>
+        </input>
+        <output>
+            <Linker type="Mutil">action</Linker>
+        </output>
+    </node>

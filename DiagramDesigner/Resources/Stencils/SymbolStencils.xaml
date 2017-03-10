@@ -1,0 +1,170 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:DiagramDesigner"
+                    xmlns:c="clr-namespace:DiagramDesigner.Controls">
+    <Style TargetType="ItemsControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ItemsControl">
+                    <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}">
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>            
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <s:Toolbox x:Key="SymbolStencils" ItemSize="110,40">
+        <ItemsControl.Items>
+            <Button IsHitTestVisible="False" Content="Trigger_vmDieTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>BOSS身上的虚拟怪死亡时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_vmHpLowerTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>BOSS身上的虚拟怪血量低于参数2时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_hpLowerTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>血量低于参数1触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_varSmallerTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>自定义变量严格小于参数2时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_varLargerTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>自定义变量严格大于参数2触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_varTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>自定义变量=参数2时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button IsHitTestVisible="False" Content="Trigger_varChangeTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>变量变化时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_thinkTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物思考时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_hpHigherTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>血量高于参数1触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_enterCombatTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物进入战斗时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_getStateTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物自身获得状态时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_loseStateTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物自身失去状态时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button IsHitTestVisible="False" Content="Trigger_specialValueZeroTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物自身的特殊控制状态被激活时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_vmSpecialValueZeroTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物绑定的虚拟怪的特殊控制状态被激活时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_aiTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>副本 \地宫AI的动作元件触发了BOSS AI,则需要使用这条触发器</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_useSkillTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>使用技能触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_skillCalcTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>技能成功结算触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_qteResTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>QTE结算时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button IsHitTestVisible="False" Content="Trigger_stateLayerTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>通过BUFF层数触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_stateAttrTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物获得某个属性时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button IsHitTestVisible="False" Content="Trigger_skillBreakTrigger">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物的技能吟唱、引导被打断时触发</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </ItemsControl.Items>
+    </s:Toolbox>
+</ResourceDictionary>

@@ -1,0 +1,310 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:DiagramDesigner"
+                    xmlns:c="clr-namespace:DiagramDesigner.Controls">
+    
+    <s:Toolbox x:Key="ActionStencils" ItemSize="110,40">
+        <ItemsControl.Items>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_defVar">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>定义一个自定义变量</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_incVar">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>增加自定义变量</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_decVar">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>减少自定义变量</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_setVar">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>给自定义变量赋值</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_doAction">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物播放ID为actionID的动作，持续时间为time</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_useSkill">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物对目标target使用技能ID为skillID，等级为skillLv的技能，该技能持续时间为time</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_moveByDirection">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>direction代表方向(1为前方,2为后方,3为左方,4为右方),distance为怪物要移动的距离,speed代表为怪物移动的速度;</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_moveToTarget">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>表示怪物追击靠近目标,target代表要靠近的目标,dist代表要追击到离目标多少范围之内,</TextBlock>
+                            <TextBlock>maxTime代表追击多长时间后仍未达到要求便放弃追击重新思考;追击的速度为speed;</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_turnDirection">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>表示怪物播放actionID标识的动作并将面向转向target,动作播放时间为time</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_addState">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>给自身加状态的动作函数,给自己加上ID为stateID,等级为lv,持续时间为time的BUFF;当time填写-1时,加上永久存在BUFF;</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_delState">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>给自身去状态的动作函数,拿掉自身ID为stateID的BUFF;若BUFF不存在则什么也不干;</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_delAllState">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>去除自身所有状态的动作函数,拿掉自身的所有状态</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_setHate">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>重置自身仇恨列表,使得仇恨列表中的所有目标仇恨值都变为一个固定值（目前为3）</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_cleanAllHate">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>清空自身仇恨列表</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_modelModify">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>修改自身模型函数,对怪物模型中以modeName为名的部位执行operation操作</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_chat">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>喊话函数,在频道号为channel的频道喊话,喊话内容为string描述的内容</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_chatWithTgtName">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>新的chat,可以传玩家名字</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_idle">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物呆立</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_moveByCurve">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>沿圆弧运动的动作函数,功能是沿着以target当前位置偏移offset的点为圆心,</TextBlock>
+                            <TextBlock>以圆心到挂物当前位置的距离为半径的圆弧移动,移动角度为angle,移动速度为speed,</TextBlock>
+                            <TextBlock>当移动时间超过duration后强制停止该动作;</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_jumpToPoint">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>怪物跳到一个指定地点,指定点以targetID指示的单位所在位置为参照,向该位置偏移为offset的位置位移,</TextBlock>
+                            <TextBlock>位移时播放actionNames中的第一个动作,位移时间为time,转向的操作在该元件开始执行后turnDirectionTime秒开始;</TextBlock>
+                            <TextBlock>条AI执行持续时间为duration,在duration-time的时间内,怪物在原地播放actionNames中的第二个动作</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_moveToPosition">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物移动到一个指定坐标的地点,坐标参数pos,移动速度speed,当怪物移动了maxTime时间后仍未到达pos点则放弃该条指令;</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_triggerAI">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>触发一条副本 \地宫AI</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_mpSwitch">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>控制移动平台运动</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_delUnit">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>删除实体</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_enterQTE">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>让仇恨列表中的玩家进入qte状态，需要传入qte的执行时长，包括后续qte</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_killVM">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>杀死指定charType的虚拟怪</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_triggerEvents">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>触发指定编号的事件（事件表中的编号）</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_leaveCombat">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>用于让怪物脱战,若怪物离开originPosition,则走goHome流程,否则添加protectTime对应时间的保护时间</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_useSkillPos">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物在指定目标点使用技能ID为skillID,等级为skillLv的技能,该技能持续时间为time</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_addHate">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物给指定target增加仇恨,仇恨量是hate,仇恨的类型是hateCause</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_forceTarget">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>怪物指定强制目标（机制为改变getTarget的结果）</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_triggerTutorial">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>播放指定新手引导</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_addAura">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>给自己加光环</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_delAura">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>移除自己身上的光环</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_posSwap">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>交互几个目标的位置</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_calcPropByVars">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>根据自定义变量的值重新计算自身属性,用于那些通过公式改变属性的怪物</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_triggerAIWithContext">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>触发一条副本 \地宫AI</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_telPos">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>把自身移动到指定坐标</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_playSound">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>播放音效</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button ToolTipService.ShowDuration="12000" IsHitTestVisible="False" Content="Action_reduceHate">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock>减少目标仇恨</TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+        </ItemsControl.Items>
+    </s:Toolbox>
+</ResourceDictionary>

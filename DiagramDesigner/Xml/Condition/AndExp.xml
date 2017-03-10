@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>AndExp</title>
+        <input>
+            <judgeNum type="InputInteger">判断条件数目</judgeNum>
+        </input>
+        <output>
+            <exp type="MultiLinker">action</exp>
+        </output>
+    </node>

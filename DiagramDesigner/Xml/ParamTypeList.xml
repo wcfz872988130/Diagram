@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <Type>
+        <vmDieTrigger>
+            <param1 type="Integer">Integer</param1>
+        </vmDieTrigger>
+        <vmHpLowerTrigger>
+            <param1 type="Integer">Integer</param1>
+            <param2 type="Float">Float</param2>
+            <param3 type="Integer">Integer</param3>
+            <param4 type="Integer">Integer</param4>
+        </vmHpLowerTrigger>
+        <hpLowerTrigger>
+            <param1 type="Integer">Integer</param1>
+            <param2 type="Float">Float</param2>
+            <param3 type="Integer">Integer</param3>
+        </hpLowerTrigger>
+        <varSmallerTrigger>
+            <param1 type="Integer">Integer</param1>
+            <param2 type="Float">Float</param2>
+            <param3 type="String">String</param3>
+            <param4 type="Integer">Integer</param4>
+        </varSmallerTrigger>
+        <varLargerTrigger>
+            <param3 type="String">String</param3>
+            <param4 type="Integer">Integer</param4>
+        </varLargerTrigger>
+        <varTrigger>
+            <param1 type="Integer">Integer</param1>
+            <param2 type="Float">Float</param2>
+            <param3 type="String">String</param3>
+            <param4 type="Integer">Integer</param4>
+        </varTrigger>
+        <thinkTrigger>
+            <param1 type="Integer">Integer</param1>
+            <param2 type="Float">Float</param2>
+        </thinkTrigger>
+        <distance>
+            <param1 type="Integer">Integer</param1>
+            <param2 type="Integer">Integer</param2>
+        </distance>
+        <angle>
+            <param1 type="Integer">Integer</param1>
+            <param2 type="Integer">Integer</param2>
+        </angle>
+        <canUseSkill>
+            <param1 type="Integer">Integer</param1>
+        </canUseSkill>
+        <useSkill>
+            <skillID type="Integer">Integer</skillID>
+            <skillLv type="Integer">Integer</skillLv>
+            <time type="Float">Float</time>
+        </useSkill>
+        <getTarget></getTarget>
+        <getSelf></getSelf>
+        <AndExp>
+            <param1 type="InputInteger">InputInteger</param1>
+        </AndExp>
+        <OrExp>
+            <param1 type="InputInteger">InputInteger</param1>
+        </OrExp>
+        <Exp></Exp>
+    </Type>
+    

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>AIParam</title>
+        <input>
+            <id type="Integer">AI编号</id>
+            <times type="Integer">单体执行的最大次数</times>
+            <enterCombatDelay type="Float">初始cd</enterCombatDelay>
+            <cdSharedAIs type="Integer">共享CD的AI编号</cdSharedAIs>
+            <intLevel type="Integer">中断等级</intLevel>
+            <intCD type="Float">中断持续时间</intCD>
+            <initOffset type="Float">触发后延时执行时间</initOffset>
+            <repeatOffset type="Integer">触发后循环执行周期</repeatOffset>
+            <priority type="Integer">触发器优先级</priority>
+            <aiCD type="Float">AI的CD时间</aiCD>
+        </input>
+        <output>
+            <condition type="MultiLinker"></condition>
+        </output>
+    </node>
