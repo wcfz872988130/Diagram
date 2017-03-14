@@ -3,8 +3,8 @@
         <title>canUseSkill</title>
         <input>
             <trigger type="SingleLinker">连接一个触发器</trigger>
-            <order type="OrderInteger">条件的顺序</order>
-            <skillID type="Integer">技能编号</skillID>
+            <order type="OrderInteger">Integer 条件的顺序</order>
+            <skillID type="Integer">Integer 技能编号</skillID>
         </input>
         <output>
             <conditionExp type="SingleLinker">条件判断</conditionExp>

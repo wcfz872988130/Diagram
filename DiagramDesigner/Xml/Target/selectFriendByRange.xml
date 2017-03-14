@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectFriendByRange</title>
+        <input>
+            <dist type="PoInteger">positiveInteger 距离半径</dist>
+            <bIncludeSelf type="PoInteger">0或1 0不包括,1包括</bIncludeSelf>
+        </input>
+    </node>

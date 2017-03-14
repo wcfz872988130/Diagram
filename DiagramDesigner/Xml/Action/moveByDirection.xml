@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>moveByDirection</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <direction type="PoInteger">1或2或3或4 自定义变量名</direction>
+            <distance type="String">(3,4.5,) 移动的距离</distance>
+            <speed type="Float">Float 移动的速度</speed>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

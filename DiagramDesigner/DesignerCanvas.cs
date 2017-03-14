@@ -34,10 +34,10 @@ namespace DiagramDesigner
         public Dictionary<int, string> orOrder = new Dictionary<int, string>();
         public Dictionary<int, int> conditionLinker = new Dictionary<int, int>();
         public Dictionary<int, int> actionLinker = new Dictionary<int, int>();
-        public DesignerItem AndDesignerItem;
-        public DesignerItem OrDesignerItem;
+        public DesignerItem AndDesignerItem = new DesignerItem();
+        public DesignerItem OrDesignerItem = new DesignerItem();
 
-        public StackPanel targetPanel;
+        public StackPanel targetPanel = new StackPanel();
         public StackPanel AIBar;
         public int initAIID;
         public List<ComboData> ListData = new List<ComboData>();        

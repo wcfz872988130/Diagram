@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>triggerTutorial</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <tutorial type="Integer">Integer 新手指引编号</tutorial>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>specialValueZeroTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+        	<type type="Integer">0/1/2 0:气绝 1:麻痹 2:睡眠</type>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

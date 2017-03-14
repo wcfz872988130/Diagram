@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectByState</title>
+        <input>
+        	<stateID type="PoInteger">PositiveInteger 状态的编号</stateID>
+        	<type type="Integer">0、1、2、3、4</type>
+        	<rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </input>
+    </node>

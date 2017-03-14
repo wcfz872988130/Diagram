@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectByHp</title>
+        <input>
+            <type type="PoInteger">1或2 1:表示从小开始选2:表示从大开始选</type>
+            <number type="PoInteger">positiveInteger 排列的位置</number>
+            <hpType type="PoInteger">0或1 0:百分比1:点数</hpType>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </input>
+    </node>

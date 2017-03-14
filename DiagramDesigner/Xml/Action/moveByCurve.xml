@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>moveByCurve</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <offset type="String">(2,3,4) 表示圆心相对目标位置的偏移</offset>
+            <angle type="String">(-80,-100) 表示移动的角度,正数标识逆时针,负数标识顺时针</angle>
+            <speed type="Float">Float 移动的速度</speed>
+            <duration type="Float">Float 代表移动多长时间后仍未到达目的地便放弃移动重新思考</duration>
+            <turnParam type="Integer">Integer 默认为0:填1时怪物的面向对着自己的前进方向</turnParam>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

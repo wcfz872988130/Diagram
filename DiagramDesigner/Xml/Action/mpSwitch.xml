@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>mpSwitch</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <mpId type="String">(1001,1002,1003) 参数形式为list,支持控制多个平台</mpId>
+            <type type="PoInteger">0或1 0:控制移动平台停止;1:控制移动平台移动</type>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

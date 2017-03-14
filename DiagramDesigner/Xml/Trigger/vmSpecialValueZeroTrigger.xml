@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>vmSpecialValueZeroTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+            <type type="Integer">0/1/2/3 0:气绝 1:麻痹 2:睡眠 3:分部件破坏</type>
+        	<chartType type="PoInteger">positiveInteger 虚拟怪的怪物编号(怪物表对应的ID)</chartType>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

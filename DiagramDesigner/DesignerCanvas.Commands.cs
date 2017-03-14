@@ -208,18 +208,18 @@ namespace DiagramDesigner
             //andOrder.Sort(SortList);
             //orOrder.Sort(SortList);
             PythonParse.codePath = AppDomain.CurrentDomain.BaseDirectory + "Code";
-            //try
-            //{
+            try
+            {
                 initAIID = int.Parse(aiParam.outputValue[0].propertyValue);
                 PythonParse.PythonStructure(initAIID, triggerList, conditionList, actionList, targetList, andOrder, orOrder);
                 MessageBox.Show("保存成功");
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show("导出失败:" + ex.Message);
-            //    andOrder.Clear();
-            //    orOrder.Clear();
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("导出失败:" + ex.Message);
+                andOrder.Clear();
+                orOrder.Clear();
+            }
             
         }
 
@@ -288,8 +288,8 @@ namespace DiagramDesigner
             List<DesignerItem> actionItemList = pps.DrawActionTriggersOnCanvas();
             for (int i = 0; i < actionItemList.Count; ++i)
             {
-                DesignerCanvas.SetLeft(actionItemList[i], 2050);
-                DesignerCanvas.SetTop(actionItemList[i], 200 + 160 * i);
+                DesignerCanvas.SetLeft(actionItemList[i], 1550);
+                DesignerCanvas.SetTop(actionItemList[i], 200 + 260 * i);
                 this.actionList.Add(actionItemList[i]);
                 this.Children.Add(actionItemList[i]);
                 SetConnectorDecoratorTemplate(actionItemList[i]);
@@ -325,7 +325,7 @@ namespace DiagramDesigner
             //}
 
             DesignerItem ExpConditionResult = pps.DrawExpResultOnCanvas();
-            DesignerCanvas.SetLeft(ExpConditionResult, 1750);
+            DesignerCanvas.SetLeft(ExpConditionResult, 1250);
             DesignerCanvas.SetTop(ExpConditionResult, 400);
             this.Children.Add(ExpConditionResult);
             expList.Add(ExpConditionResult);
@@ -335,7 +335,7 @@ namespace DiagramDesigner
             
             if (ExpConditionAnd != null)
             {
-                DesignerCanvas.SetLeft(ExpConditionAnd, 1450);
+                DesignerCanvas.SetLeft(ExpConditionAnd, 950);
                 DesignerCanvas.SetTop(ExpConditionAnd, 200);
                 this.AndDesignerItem = ExpConditionAnd;
                 this.Children.Add(ExpConditionAnd);
@@ -350,7 +350,7 @@ namespace DiagramDesigner
             DesignerItem ExpConditionOr = pps.DrawAndorOrExpOnCanvas("OrExp", "ConditionOrExp", "or");
             if (ExpConditionOr != null)
             {
-                DesignerCanvas.SetLeft(ExpConditionOr, 1450);
+                DesignerCanvas.SetLeft(ExpConditionOr, 950);
                 DesignerCanvas.SetTop(ExpConditionOr, 570);
                 this.OrDesignerItem = ExpConditionOr;
                 this.Children.Add(ExpConditionOr);

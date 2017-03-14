@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectBySchoolList</title>
+        <input>
+        	<num type="PoInteger">positiveInteger 大于1;需要交换的玩家数目,当周围的仇恨玩家小于num时,交换这些所有玩家位置;</num>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </input>
+    </node>

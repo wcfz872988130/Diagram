@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>randSelectInRange</title>
+        <input>
+        	<scope type="PoInteger">positiveInteger 选择玩家的集合中玩家个数</scope>
+        	<sortType type="PoInteger">1或2或3 1:以仇恨2:以攻击3:以治疗能力</sortType>
+        </input>
+    </node>

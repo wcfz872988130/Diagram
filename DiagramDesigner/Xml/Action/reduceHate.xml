@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>reduceHate</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <type type="Integer">0或1或2 1:减少指定值2:减少指定倍数3:设成0(玩家脱战)</type>
+            <hate type="Integer">Integer 值</hate>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

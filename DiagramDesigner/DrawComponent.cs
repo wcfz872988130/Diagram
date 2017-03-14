@@ -103,6 +103,7 @@ namespace DiagramDesigner
                 int nodeIndex = kvp.Key;
                 List<string> nodeParam = new List<string>();
                 DesignerItem newItem = new DesignerItem();
+                newItem.ItemType = type;
                 GroupBox groupBox = new GroupBox();
                 groupBox.Background = new SolidColorBrush(Colors.LightSlateGray);
                 groupBox.Foreground = new SolidColorBrush(Colors.DarkBlue);
@@ -132,7 +133,7 @@ namespace DiagramDesigner
 
                 addTempleteByType(listView1, listView2, type, newItem);
 
-                if(param.Count>0)
+                if(param.Count > 0 && param.ContainsKey(nodeIndex))
                 {
                     nodeParam = param[nodeIndex];
                 }
@@ -196,7 +197,7 @@ namespace DiagramDesigner
                 border.Child = groupBox;
                 newItem.Content = border;
                 newItem.IDName = nodeName;
-                newItem.ItemType = type;
+                
                 newItem.Width = border.Width + 6;
                 newItem.Height = border.Height + 10;
                 listItem.Add(newItem);
@@ -272,6 +273,7 @@ namespace DiagramDesigner
                 listItem.Children.Add(textBlock);
 
                 Connector co1 = new Connector();
+                GetConnectorType(co1, item.ItemType, direction);
                 co1.Orientation = direction == "left" ? (ConnectorOrientation.Left) : (ConnectorOrientation.Right);
                 co1.DataType = GetDataType(connectorType);
                 co1.Content = listItem;
@@ -333,7 +335,23 @@ namespace DiagramDesigner
 
         public static void addComboBox(int num, ListView listView)
         {
+            int conNum = 0;
             int length = listView.Items.Count;
+            for (int i = 1; i < length; ++i)
+            {
+                Connector con = listView.Items[i] as Connector;
+                if(con.ConnectorHasConnected)
+                {
+                    conNum++;
+                }
+            }
+
+            if(num < conNum)
+            {
+                MessageBox.Show("所填数目不能小于已连接数目");
+                return;
+            }
+            
             if((num - length) >= 0)
             {
                 int extraLength = num - length + 1;
@@ -345,6 +363,7 @@ namespace DiagramDesigner
                     cBox.ItemsSource = new List<string> { "True", "False" };
                     cBox.SelectedIndex = 0;
                     Connector co1 = new Connector();
+                    co1.SelfType = "ConditionAndOrExp";
                     co1.Orientation = ConnectorOrientation.Left;
                     co1.DataType = ConnectorDataType.SingleLinker;
                     co1.Content = cBox;
@@ -352,7 +371,7 @@ namespace DiagramDesigner
                     listView.Items.Add(co1);
                 }
             }
-            else if((num - length) <= -1)
+            else if((num - length) < -1)
             {
                 int redundantLength = length - num - 1;
                 for (int i = 0; i < redundantLength; ++i)
@@ -381,6 +400,7 @@ namespace DiagramDesigner
                 int index = vp.Value == "True" ? 0 : 1;
                 newcBox.SelectedIndex = index;
                 Connector co1 = new Connector();
+                co1.SelfType = "ConditionAndOrExp";
                 co1.Orientation = ConnectorOrientation.Left;
                 co1.DataType = ConnectorDataType.SingleLinker;
                 co1.Content = newcBox;
@@ -399,9 +419,6 @@ namespace DiagramDesigner
 
             listView.Items.Refresh();
         }
-
-        public static void addCommonComboBox()
-        { }
 
         private static Border addBorder(int elementHeight, int radiu)
         {
@@ -503,5 +520,43 @@ namespace DiagramDesigner
                 }
             }
         }
+
+        public static void GetConnectorType(Connector con, string type, string direction)
+        {
+            switch (type)
+            {
+                case "Trigger":
+                    if (direction.Equals("right"))
+                    {
+                        con.NextType = "Condition";
+                    }
+                    else { con.SelfType = "Trigger"; }
+                    break;
+                case "Condition":
+                    if (direction.Equals("right"))
+                    {
+                        con.NextType = "ConditionAndOrExp";
+                    }
+                    else { con.SelfType = "Condition"; }
+                    break;
+                case "ConditionAndExp":
+                    con.NextType = "ConditionExpResult";
+                    break;
+                case "ConditionOrExp":
+                    con.NextType = "ConditionExpResult";
+                    break;
+                case "ConditionExpResult":
+                    if (direction.Equals("right"))
+                    {
+                        con.NextType = "Action";
+                    }
+                    else { con.SelfType = "ConditionExpResult"; }
+                    break;
+                case "Action":
+                    con.SelfType = "Action";
+                    break;
+            }
+        }
+
     }
 }

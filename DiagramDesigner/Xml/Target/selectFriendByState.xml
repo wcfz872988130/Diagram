@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectFriendByState</title>
+        <input>
+        	<range type="PoNumber">positiveNumber 选择半径</range>
+        	<state type="Integer">Integer 状态编号</state>
+        	<type type="Integer">0或1 0:在距离自己为range范围内的友方单位中,选出带有状态state的玩家(多个时随机选择一个);type=1时反向选择</type>
+        	<sortType type="PoInteger">1或2或3 1:怪物中选择2:玩家中选择3:玩家和怪物中(包括召唤物)</sortType>
+        </input>
+    </node>

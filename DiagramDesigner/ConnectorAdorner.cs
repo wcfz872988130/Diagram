@@ -57,7 +57,7 @@ namespace DiagramDesigner
 
         protected override void OnMouseUp(MouseButtonEventArgs e)
         {
-            if (HitConnector != null && !HitConnector.ConnectorHasConnected && !this.sourceConnector.ConnectorHasConnected)
+            if (HitConnector != null && !HitConnector.ConnectorHasConnected && !this.sourceConnector.ConnectorHasConnected && this.sourceConnector.NextType == this.HitConnector.SelfType)
             {
                 Connector sourceConnector = this.sourceConnector;
                 Connector sinkConnector = this.HitConnector;

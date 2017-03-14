@@ -31,6 +31,10 @@ namespace DiagramDesigner
             nodename = file_node[1];
             nodeFileName = file_node[0];
 
+           // WrapPanel box = VisualTreeHelper.GetParent(this) as WrapPanel;
+            //Expander expander = VisualTreeHelper.GetParent(box) as Expander;
+            //nodeFileName = box.Name as string;
+
             if (nodename != null && nodeFileName != null)
             {
                 if(transname!=null)
@@ -56,16 +60,15 @@ namespace DiagramDesigner
                 DragObject dataObject = new DragObject();
                 dataObject.Xaml = xamlString;
 
-                WrapPanel panel = VisualTreeHelper.GetParent(this) as WrapPanel;
-                if (panel != null)
-                {
-                    // desired size for DesignerCanvas is the stretched Toolbox item size
-                    double scale = 1;
-                    dataObject.DesiredSize = new Size(panel.ItemWidth * scale, panel.ItemHeight * scale);
-                }
+                //WrapPanel panel = VisualTreeHelper.GetParent(this) as WrapPanel;
+                //if (panel != null)
+                //{
+                //    // desired size for DesignerCanvas is the stretched Toolbox item size
+                //    double scale = 1;
+                //    dataObject.DesiredSize = new Size(panel.ItemWidth * scale, panel.ItemHeight * scale);
+                //}
 
                 DragDrop.DoDragDrop(this, dataObject, DragDropEffects.Copy);
-
                 e.Handled = true;
             }
         }

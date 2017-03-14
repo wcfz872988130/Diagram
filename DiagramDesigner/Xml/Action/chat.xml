@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>chat</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <chatId type="Integer">Integer 喊话表中的喊话编号</chatId>
+            <channel type="Integer">Integer 喊话的频道 1:头顶冒泡，并且附近频道喊话 2:头顶冒泡，不在频道显示 100:屏幕中间红字</channel>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

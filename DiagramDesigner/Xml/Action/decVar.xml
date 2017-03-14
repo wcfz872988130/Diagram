@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>decVar</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <var type="String">String 自定义变量名</var>
+            <param type="PoInteger">PositiveInteger 减少的量</param>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

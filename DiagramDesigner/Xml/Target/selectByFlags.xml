@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectByFlags</title>
+        <input>
+        	<radii type="PoNumber">positiveNumber 选择半径</radii>
+        	<flagList type="String">(1,) 0:禁止移动1:丧失控制权,对应502属性(眩晕)3:禁止施放,沉默4:不能成为技能目标9:隐身</flagList>
+        	<type type="Integer">0或1 1:选出带有的2:选出不带有的</type>
+        </input>
+    </node>

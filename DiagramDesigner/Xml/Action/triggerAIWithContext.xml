@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>triggerAIWithContext</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <triggerNo type="Integer">Integer 触发编号，当该编号与副本\地宫AI中元件的参数编号一致时，才能触发那条副本\地宫AI</triggerNo>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

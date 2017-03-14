@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>forceTarget</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <priority type="PoInteger">positiveInteger 强制目标的优先级</priority>
+            <forceTime type="Integer">Integer 强制时间，-1为无限时间</forceTime>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

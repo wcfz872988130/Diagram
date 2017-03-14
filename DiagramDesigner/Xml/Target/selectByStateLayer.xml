@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectByStateLayer</title>
+        <input>
+        	<buffer type="String">[37234,2,3]</buffer>
+        	<rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </input>
+    </node>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>enterCombatTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+            <delaytime type="Float">Float 延时触发的时间</delaytime>
+            <cycletime type="Float">Float 循环触发的间隔(不填默认0,即不循环)</cycletime>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

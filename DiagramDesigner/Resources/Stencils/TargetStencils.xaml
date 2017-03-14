@@ -3,7 +3,7 @@
                     xmlns:s="clr-namespace:DiagramDesigner"
                     xmlns:c="clr-namespace:DiagramDesigner.Controls">
 
-    <s:Toolbox x:Key="TargetStencils" ItemSize="110,40">
+    <s:Toolbox x:Key="TargetStencils" ItemSize="110,40" x:Name="Target">
         <ItemsControl.Items>
             <Button IsHitTestVisible="False" ToolTipService.ShowDuration="12000" Content="Target_selectByThreat" >
                 <Button.ToolTip>

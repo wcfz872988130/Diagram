@@ -3,10 +3,10 @@
         <title>useSkill</title>
         <input>
             <conditionExp type="SingleLinker">连接条件判断</conditionExp>
-            <order type="OrderInteger">动作的顺序</order>
-            <skillID type="Integer">技能编号</skillID>
-            <skillLv type="Integer">技能等级</skillLv>
-            <time type="Float">技能持续时间</time>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <skillID type="Integer">Integer 技能编号</skillID>
+            <skillLv type="Integer">Integer 技能等级</skillLv>
+            <time type="Float">Float 技能持续时间</time>
         </input>
         <output>
             <target type="Combo">寻找目标</target>

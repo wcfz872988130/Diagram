@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>getYDist</title>
+        <input>
+        	<target type="Integer">0/1/2 填写目标选择函数编号,作为上下文会传递给fbMgr或dgMgr</target>
+        </input>
+    </node>

@@ -25,6 +25,12 @@ namespace DiagramDesigner
                 case "OrderInteger":
                     backGroundColor = new SolidColorBrush(Colors.PaleVioletRed);
                     break;
+                case "PoInteger":
+                    backGroundColor = new SolidColorBrush(Colors.PaleVioletRed);
+                    break;
+                case "PoNumber":
+                    backGroundColor = new SolidColorBrush(Colors.MediumOrchid);
+                    break;
                 case "InputInteger":
                     backGroundColor = new SolidColorBrush(Colors.Firebrick);
                     break;
@@ -39,6 +45,9 @@ namespace DiagramDesigner
                     break;
                 case "SingleLinker":
                     backGroundColor = new SolidColorBrush(Colors.CornflowerBlue);
+                    break;
+                case "Range":
+                    backGroundColor = new SolidColorBrush(Colors.Indigo);
                     break;
                 case "MultiLinker":
                     backGroundColor = new SolidColorBrush(Colors.Cornsilk);

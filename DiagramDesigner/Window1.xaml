@@ -85,8 +85,8 @@
                 <GroupBox Header="Diagram" Grid.Column="1" Margin="3,0,0,0" Style="{x:Null}">
                     <Grid >
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="60"/>
-                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="11*"/>
                             <RowDefinition Height="2*"/>
                         </Grid.RowDefinitions>
                         <ScrollViewer x:Name="TargetScrollViewer"
@@ -126,7 +126,7 @@
                             </StackPanel>
                         </ScrollViewer>
 
-                        <s:ZoomBox Width="180"
+                        <s:ZoomBox Width="280"
                                HorizontalAlignment="Right"
                                VerticalAlignment="Top"
                                ScrollViewer="{Binding ElementName=DesignerScrollViewer}" Grid.Row="1" Margin="0,0,22,0" />

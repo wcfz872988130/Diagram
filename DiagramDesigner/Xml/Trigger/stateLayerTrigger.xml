@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>stateLayerTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+        	<buff type="PoInteger">positiveInteger BUFF编号</buff>
+        	<list type="String">正整数或list(5,10,15,) BUFF需要触发的层数;填写list时,只要buff层数在list列出的值内就触发</list>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

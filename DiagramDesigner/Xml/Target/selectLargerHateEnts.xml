@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectLargerHateEnts</title>
+        <input>
+        	<k type="PoNumber">positiveNumber 仇恨阙值</k>
+        </input>
+    </node>

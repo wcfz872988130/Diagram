@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectBySchool</title>
+        <input>
+        	<schoolId type="PoInteger">positiveInteger 3=圣堂,4=玉虚,5=光刃,6=炎天,7=灵珑,8=流光</schoolId>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </input>
+    </node>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>hasFlagCon</title>
+        <input>
+            <trigger type="SingleLinker">连接一个触发器</trigger>
+            <order type="OrderInteger">Integer 条件的顺序</order>
+            <flags type="String">(1,) 带有的状态标记,如晕眩(1,)</flags>
+        </input>
+        <output>
+            <conditionExp type="SingleLinker">条件判断</conditionExp>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

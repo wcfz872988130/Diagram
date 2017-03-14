@@ -1,57 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
     <Type>
-        <vmDieTrigger>
-            <param1 type="Integer">Integer</param1>
-        </vmDieTrigger>
-        <vmHpLowerTrigger>
-            <param1 type="Integer">Integer</param1>
-            <param2 type="Float">Float</param2>
-            <param3 type="Integer">Integer</param3>
-            <param4 type="Integer">Integer</param4>
-        </vmHpLowerTrigger>
-        <hpLowerTrigger>
-            <param1 type="Integer">Integer</param1>
-            <param2 type="Float">Float</param2>
-            <param3 type="Integer">Integer</param3>
-        </hpLowerTrigger>
-        <varSmallerTrigger>
-            <param1 type="Integer">Integer</param1>
-            <param2 type="Float">Float</param2>
-            <param3 type="String">String</param3>
-            <param4 type="Integer">Integer</param4>
-        </varSmallerTrigger>
-        <varLargerTrigger>
-            <param3 type="String">String</param3>
-            <param4 type="Integer">Integer</param4>
-        </varLargerTrigger>
-        <varTrigger>
-            <param1 type="Integer">Integer</param1>
-            <param2 type="Float">Float</param2>
-            <param3 type="String">String</param3>
-            <param4 type="Integer">Integer</param4>
-        </varTrigger>
-        <thinkTrigger>
-            <param1 type="Integer">Integer</param1>
-            <param2 type="Float">Float</param2>
-        </thinkTrigger>
-        <distance>
-            <param1 type="Integer">Integer</param1>
-            <param2 type="Integer">Integer</param2>
-        </distance>
+        <addAura>
+            <auraId type="Integer">Integer 光环的id</auraId>
+            <auraLv type="Integer">Integer 光环的等级</auraLv>
+        </addAura>
+        <addHate>
+            <hate type="PoNumber">PositiveNumber 增加的仇恨量</hate>
+            <hateCause type="PoInteger">1或2 1:进入trap产生的仇恨,2:攻击怪物产生的仇恨</hateCause>
+        </addHate>
+        <addState>
+            <stateID type="PoInteger">PositiveInteger 转身动作的ID,ID不填时直接转</stateID>
+            <lv type="PoInteger">PositiveInteger 状态的等级</lv>
+            <time type="Float">Float 状态持续时间</time>
+        </addState>
+        <calcPropByVars>
+        </calcPropByVars>
+        <chat>
+            <chatId type="Integer">Integer 喊话表中的喊话编号</chatId>
+            <channel type="Integer">Integer 喊话的频道 1:头顶冒泡，并且附近频道喊话 2:头顶冒泡，不在频道显示 100:屏幕中间红字</channel>
+        </chat>
+        <chatWithTgtName>
+            <msgId type="string">string 引用喊话表编号,如果要传人名,此喊话中必须带%s</msgId>
+            <channel type="PoInteger">PositiveInteger 左下角的频道编号：</channel>
+            <tgtID type="Integer">Integer 引用目标玩家entityId,如果得到为空,则不喊话:如果填-1,则直接喊出那句话的字符串</tgtID>
+            <bubble type="Integer">Integer 0,表示不冒泡,1表示冒泡</bubble>
+        </chatWithTgtName>
+        <cleanAllHate></cleanAllHate>
+        <decVar>
+            <var type="String">String 自定义变量名</var>
+            <param type="PoInteger">PositiveInteger 减少的量</param>
+        </decVar>
+        <defVar>
+            <var type="String">String 自定义变量名</var>
+            <param type="Integer">Integer 自定义变量的默认值</param>
+        </defVar>
+        <delAllState></delAllState>
+        <delAura>
+            <auraId type="Integer">Integer 光环的ID,id=0时移除自身所有光环</auraId>
+        </delAura>
+        <delState>
+            <stateID type="PoInteger">PositiveInteger 状态的编号(在技能表的状态表中)</stateID>
+        </delState>
+        <delUnit>
+            <type type="Integer">事件中定义的实体类型</type>
+            <entityList type="String">(1001,1002,1003,) 实体列表</entityList>
+        </delUnit>
+        <doAction>
+            <actionID type="Integer">Integer 动作的编号</actionID>
+            <time type="Float">Float 动作持续时间</time>
+        </doAction>
+        <enterQTE>
+            <qteID type="Integer">Integer</qteID>
+            <duration type="Float">Float</duration>
+        </enterQTE>
+        <forceTarget>
+            <priority type="PoInteger">positiveInteger 强制目标的优先级</priority>
+            <forceTime type="Integer">Integer 强制时间，-1为无限时间</forceTime>
+        </forceTarget>
+        <idle>
+            <dist type="Float">Float 呆立时间</dist>
+        </idle>
+        <incVar>
+            <var type="String">String 自定义变量名</var>
+            <param type="PoInteger">PositiveInteger 增加的量</param>
+        </incVar>
+        <jumpToPoint>
+            <offset type="String">(x,z) 表示位移地点相对目标位置的偏移,以目标到怪物的连线方向为z轴正向,以目标到怪物连线方向的右手方向为x轴正向;当目标为自身时,以自身yaw值为z轴正向</offset>
+            <actionNames type="String">('actionId1','actionId2',param1,param2)actionId1为位移中播放的动作;actionId2为位移后的收手动作;param1用于处理主角怪的位移,当主角怪的翻滚带有美术位移时,此参数填1可以去掉美术位移;param2填1表示位移过程中隐身;          </actionNames>
+            <time type="Float">Float 位移持续时间</time>
+            <turnDirection type="Float">Float 位移中转动面向的时间点(当turnDirectionTime>time时,不转面向)</turnDirection>
+            <duration type="Float">Float 整条AI的持续时间</duration>
+        </jumpToPoint>
+        <killVM>
+            <charType type="PoInteger">positiveInteger 虚拟怪的怪物ID</charType>
+        </killVM>
+        <leaveCombat>
+            <protectTime type="Float">Float 保护时间</protectTime>
+        </leaveCombat>
+        <modelModify>
+            <modelName type="String">String 怪物的模型部位名称</modelName>
+            <operation type="String">String 龙尾有hide,即隐藏:武器写t1,破坏;</operation>
+            <type type="PoInteger">PositiveInteger 默认1,龙尾隐藏;2,武器破坏;</type>
+        </modelModify>
+        <moveByCurve>
+            <offset type="String">(2,3,4) 表示圆心相对目标位置的偏移</offset>
+            <angle type="String">(-80,-100) 表示移动的角度,正数标识逆时针,负数标识顺时针</angle>
+            <speed type="Float">Float 移动的速度</speed>
+            <duration type="Float">Float 代表移动多长时间后仍未到达目的地便放弃移动重新思考</duration>
+            <turnParam type="Integer">Integer 默认为0:填1时怪物的面向对着自己的前进方向</turnParam>
+        </moveByCurve>
+        <moveByDirection>
+            <direction type="PoInteger">1或2或3或4 自定义变量名</direction>
+            <distance type="String">(3,4.5,) 移动的距离</distance>
+            <speed type="Float">Float 移动的速度</speed>
+        </moveByDirection>
+        <moveToPosition>
+            <pos type="String">(x,y,z) 填写目标点的坐标</pos>
+            <maxTime type="Float">Float 代表移动多长时间后仍未达到要求便放弃追击重新思考</maxTime>
+            <speed type="Float">Float 表示怪物移动的速度</speed>
+            <action type="String">("1501,") 怪物移动过程中播放的动作,按照顺序播放动作,如果是循环动作,只能填一个</action>
+        </moveToPosition>
+        <moveToTarget>
+            <dist type="Float">Float 追击到离目标多少范围之内</dist>
+            <maxTime type="Float">Float 追击多长时间后仍未达到要求便放弃追击重新思考</maxTime>
+            <speed type="Float">Float 怪物追击速度(填0取原型表run速度)</speed>
+            <dist2 type="Float">Float 清仇恨距离 0或不填, 表示无论距离多远,与目标路点是否通,均会追击,不清仇恨大于0,表示当超过这个距离并且路点不通时,怪物会放弃追击并清除该目标的仇恨</dist2>
+        </moveToTarget>
+        <mpSwitch>
+            <mpId type="String">(1001,1002,1003) 参数形式为list,支持控制多个平台</mpId>
+            <type type="PoInteger">0或1 0:控制移动平台停止;1:控制移动平台移动</type>
+        </mpSwitch>
+        <playSound>
+            <soundId type="Integer">Integer 音效ID,引用音效配置表</soundId>
+        </playSound>
+        <posSwap>
+            <avatars type="Integer">0或1或2 填写目标选择函数编号，被交换位置的玩家List</avatars>
+            <effectId type="PoInteger">positiveInteger 被交换位置玩家身上播的特效编号</effectId>
+            <duration type="Float">Float AI执行的时间，怪物在这段时间内idle</duration>
+        </posSwap>
+        <reduceHate>
+            <type type="Integer">0或1或2 1:减少指定值2:减少指定倍数3:设成0(玩家脱战)</type>
+            <hate type="Integer">Integer 值</hate>
+        </reduceHate>
+        <setHate></setHate>
+        <setVar>
+            <var type="String">String 自定义变量名</var>
+            <param type="Integer">Integer 自定义变量的赋值</param>
+        </setVar>
+        <telPos>
+            <position type="String">(x,y,z) 坐标</position>
+            <yaw type="String">(-557.898,-43.398,-662.299,) 面向,不填表示面向不变</yaw>
+        </telPos>
+        <triggerAI>
+            <triggerNo type="Integer">Integer 填写目标点的坐标</triggerNo>
+        </triggerAI>
+        <triggerAIWithContext>
+            <triggerNo type="Integer">Integer 触发编号，当该编号与副本\地宫AI中元件的参数编号一致时，才能触发那条副本\地宫AI</triggerNo>
+        </triggerAIWithContext>
+        <triggerEvents>
+            <eventsId type="String">(45,) 事件编号集合</eventsId>
+        </triggerEvents>
+        <triggerTutorial>
+            <tutorial type="Integer">Integer 新手指引编号</tutorial>
+        </triggerTutorial>
+        <turnDirection>
+            <actionID type="Integer">Integer 转身动作的ID,ID不填时直接转</actionID>
+            <time type="Float">Float 动作播放的时间</time>
+        </turnDirection>
+        <useSkill>
+            <skillID type="Integer">Integer 技能编号</skillID>
+            <skillLv type="Integer">Integer 技能等级</skillLv>
+            <time type="Float">Float 技能持续时间</time>
+        </useSkill>
+        <useSkillPos>
+            <skillID type="Integer">Integer 技能编号</skillID>
+            <skillLv type="Integer">Integer 技能等级</skillLv>
+            <pos type="String">(x,y,z) 技能释放时传入的坐标</pos>
+            <time type="Float">Float 技能持续时间</time>
+        </useSkillPos>
         <angle>
-            <param1 type="Integer">Integer</param1>
-            <param2 type="Integer">Integer</param2>
+            <minAngle type="Integer">Integer 最小角度</minAngle>
+            <maxAngle type="Integer">Integer 最大角度</maxAngle>
         </angle>
         <canUseSkill>
-            <param1 type="Integer">Integer</param1>
+            <skillID type="Integer">Integer 技能编号</skillID>
         </canUseSkill>
-        <useSkill>
-            <skillID type="Integer">Integer</skillID>
-            <skillLv type="Integer">Integer</skillLv>
-            <time type="Float">Float</time>
-        </useSkill>
-        <getTarget></getTarget>
-        <getSelf></getSelf>
+        <compareCon>
+            <num type="PoInteger">positiveInteger 传入用于比较的第二个数值</num>
+            <type type="Integer">Integer -1/0/1 小于/等于/大于</type>
+        </compareCon>
+        <distance>
+            <minDist type="Integer">Integer 最小距离</minDist>
+            <maxDist type="Integer">Integer 最大距离</maxDist>
+        </distance>
+        <hasEnoughEnemy>
+            <pNumber type="Integer">Integer 数量判断的依据</pNumber>
+            <minDist type="Integer">Integer 最小距离</minDist>
+            <maxDist type="Integer">Integer 最大距离</maxDist>
+            <minAngle type="Integer">Integer 最小角度</minAngle>
+            <maxAngle type="Integer">Integer 最大角度</maxAngle>
+        </hasEnoughEnemy>
+        <hasEnoughFriend>
+            <pNumber type="Integer">Integer 数量判断的依据</pNumber>
+            <minDist type="Integer">Integer 最小距离</minDist>
+            <maxDist type="Integer">Integer 最大距离</maxDist>
+            <minAngle type="Integer">Integer 最小角度</minAngle>
+            <maxAngle type="Integer">Integer 最大角度</maxAngle>
+            <aliveOrDead type="Integer">0/1 0:表示选活的;1:表示选死的</aliveOrDead>
+        </hasEnoughFriend>
+        <hasEnoughMembers>
+            <radii type="Float">Float 判定距离</radii>
+            <nums type="Integer">Integer 范围内的队友数目</nums>
+        </hasEnoughMembers>
+        <hasFlagCon>
+            <flags type="String">(1,) 带有的状态标记,如晕眩(1,)</flags>
+        </hasFlagCon>
+        <hasStateCon>
+            <stateID type="PoInteger">positiveInteger 状态的编号(在技能表的状态表中)</stateID>
+        </hasStateCon>
+        <hpCompare>
+            <hpValue type="Integer">Integer 0-99 血量百分比</hpValue>
+        </hpCompare>
+        <hpCompareByTwo>
+            <type type="Integer">1/0/-1 1:tgt1的血量百分比大于tgt2的血量百分比,0:等于,-1:小于,</type>
+            <value type="Float">Float 血量比较的参照值，浮点数，取值范围-100.0~100.0，表示血量百分比</value>
+        </hpCompareByTwo>
+        <isCharType>
+            <monsterIdList type="String">(46043,) 怪物的编号,取自怪物表</monsterIdList>
+        </isCharType>
+        <isEmpty>
+        </isEmpty>
+        <isInFly></isInFly>
+        <isInFuben>
+            <spaceNo type="Integer">Integer 填副本编号或者0</spaceNo>
+        </isInFuben>
+        <isInterrupting></isInterrupting>
+        <isNull></isNull>
+        <rand>
+            <pro type="Float">Float 0~1之间 概率</pro>
+        </rand>
+        <vmAlive>
+            <num type="Integer">Integer 填写虚拟怪的在怪物表中的编号</num>
+        </vmAlive>
         <AndExp>
             <param1 type="InputInteger">InputInteger</param1>
         </AndExp>
@@ -59,5 +229,175 @@
             <param1 type="InputInteger">InputInteger</param1>
         </OrExp>
         <Exp></Exp>
+        <getContext>
+            <number type="PoInteger">positiveInteger 参数编号</number>
+        </getContext>
+        <getCreation>
+            <cid type="PoInteger">positiveInteger 创生的技能编号</cid>
+        </getCreation>
+        <getEntityByCharType>
+            <entityCharType type="PoInteger">positiveInteger 单位的charType</entityCharType>
+            <range type="PoInteger">positiveInteger 搜索的范围</range>
+        </getEntityByCharType>
+        <getSelf></getSelf>
+        <getShishenMode></getShishenMode>
+        <getTarget></getTarget>
+        <getTargetFromOtherMonster>
+            <monsterCharType type="PoInteger">positiveInteger 怪物在怪物表中的ID</monsterCharType>
+        </getTargetFromOtherMonster>
+        <getUnFlyTarget></getUnFlyTarget>
+        <getVar>
+            <varName type="String">String 变量名</varName>
+        </getVar>
+        <getYDist>
+            <target type="Integer">0/1/2 填写目标选择函数编号,作为上下文会传递给fbMgr或dgMgr</target>
+        </getYDist>
+        <randSelect>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </randSelect>
+        <randSelectInRange>
+            <scope type="PoInteger">positiveInteger 选择玩家的集合中玩家个数</scope>
+            <sortType type="PoInteger">1或2或3 1:以仇恨2:以攻击3:以治疗能力</sortType>
+        </randSelectInRange>
+        <selectAvatars>
+            <num type="PoInteger">positiveInteger 大于1;需要交换的玩家数目,当周围的仇恨玩家小于num时,交换这些所有玩家位置;</num>
+            <maxDist type="PoNumber">positiveNumber 最大选择距离</maxDist>
+            <k type="PoNumber">positiveNumber 当num=2时生效,优先选择两个距离大于k的玩家进行交换;</k>
+        </selectAvatars>
+        <selectByDamage></selectByDamage>
+        <selectByFlags>
+            <radii type="PoNumber">positiveNumber 选择半径</radii>
+            <flagList type="String">(1,) 0:禁止移动1:丧失控制权,对应502属性(眩晕)3:禁止施放,沉默4:不能成为技能目标9:隐身</flagList>
+            <type type="Integer">0或1 1:选出带有的2:选出不带有的</type>
+        </selectByFlags>
+        <selectByHp>
+            <type type="PoInteger">1或2 1:表示从小开始选2:表示从大开始选</type>
+            <number type="PoInteger">positiveInteger 排列的位置</number>
+            <hpType type="PoInteger">0或1 0:百分比1:点数</hpType>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </selectByHp>
+        <selectByRange>
+            <minDist type="Float">Float 距离最小值</minDist>
+            <maxDist type="Float">Float 距离最大值</maxDist>
+        </selectByRange>
+        <selectBySchool>
+            <schoolId type="PoInteger">positiveInteger 3=圣堂,4=玉虚,5=光刃,6=炎天,7=灵珑,8=流光</schoolId>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </selectBySchool>
+        <selectBySchoolList>
+            <num type="PoInteger">positiveInteger 大于1;需要交换的玩家数目,当周围的仇恨玩家小于num时,交换这些所有玩家位置;</num>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </selectBySchoolList>
+        <selectByState>
+            <stateID type="PoInteger">PositiveInteger 状态的编号</stateID>
+            <type type="Integer">0、1、2、3、4</type>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </selectByState>
+        <selectByStateLayer>
+            <buffer type="String">[37234,2,3]</buffer>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </selectByStateLayer>
+        <selectByThreat>
+            <number type="PoInteger">positiveInteger</number>
+            <rangeMin type="Float">Float 距离最小值</rangeMin>
+            <rangeMax type="Float">Float 距离最大值</rangeMax>
+        </selectByThreat>
+        <selectFriendByFlags>
+            <radii type="PoNumber">positiveNumber 选择半径</radii>
+            <flagList type="String">(1,)</flagList>
+            <type type="Integer">0或1 1:选出带有的2:选出不带有的</type>
+        </selectFriendByFlags>
+        <selectFriendByRange>
+            <dist type="PoInteger">positiveInteger 距离半径</dist>
+            <bIncludeSelf type="PoInteger">0或1 0不包括,1包括</bIncludeSelf>
+        </selectFriendByRange>
+        <selectFriendBySP></selectFriendBySP>
+        <selectFriendByState>
+            <range type="PoNumber">positiveNumber 选择半径</range>
+            <state type="Integer">Integer 状态编号</state>
+            <type type="Integer">0或1 0:在距离自己为range范围内的友方单位中,选出带有状态state的玩家(多个时随机选择一个);type=1时反向选择</type>
+            <sortType type="PoInteger">1或2或3 1:怪物中选择2:玩家中选择3:玩家和怪物中(包括召唤物)</sortType>
+        </selectFriendByState>
+        <selectLargerHateEnts>
+            <k type="PoNumber">positiveNumber 仇恨阙值</k>
+        </selectLargerHateEnts>
+        <aiTrigger>
+            <triggerNo type="Integer">Integer 触发这条BOSS AI的副本\地宫AI编号</triggerNo>
+        </aiTrigger>
+        <enterCombatTrigger>
+            <delaytime type="Float">Float 延时触发的时间</delaytime>
+            <cycletime type="Float">Float 循环触发的间隔(不填默认0,即不循环)</cycletime>
+        </enterCombatTrigger>
+        <getStateTrigger>
+            <stateID type="PoInteger">positiveInteger 状态的编号(在技能表的状态表中)</stateID>
+        </getStateTrigger>
+        <hpHigherTrigger>
+            <var type="PoInteger">positiveInteger 1~99 血量百分比</var>
+        </hpHigherTrigger>
+        <hpLowerTrigger>
+            <percent type="PoInteger">positiveInteger 1-99 血量百分比</percent>
+        </hpLowerTrigger>
+        <loseStateTrigger>
+            <stateID type="PoInteger">positiveInteger 状态的编号(在技能表的状态表中)</stateID>
+        </loseStateTrigger>
+        <qteResTrigger>
+            <qteId type="Integer">Integer</qteId>
+            <res type="Integer">0/1 0:失败触发 1:成功触发</res>
+        </qteResTrigger>
+        <skillBreakTrigger>
+            <skillId type="Integer">Integer 被打断的技能编号</skillId>
+        </skillBreakTrigger>
+        <skillCalcTrigger>
+            <skillId type="Integer">Integer 技能ID</skillId>
+            <delayTime type="Float">Float 延迟触发的时间</delayTime>
+        </skillCalcTrigger>
+        <specialValueZero>
+            <type type="Integer">0/1/2 0:气绝 1:麻痹 2:睡眠</type>
+        </specialValueZero>
+        <stateAttrTrigger>
+            <attrId type="Integer">Integer 属性编号(如眩晕是502)</attrId>
+        </stateAttrTrigger>
+        <stateLayerTrigger>
+            <buff type="PoInteger">positiveInteger BUFF编号</buff>
+            <list type="String">正整数或list(5,10,15,) BUFF需要触发的层数;填写list时,只要buff层数在list列出的值内就触发</list>
+        </stateLayerTrigger>
+        <thinkTrigger></thinkTrigger>
+        <useSkillTrigger>
+            <skillId type="Integer">Integer 技能ID</skillId>
+            <delayTime type="Float">Float 延迟触发的时间</delayTime>
+        </useSkillTrigger>
+        <varChangeTrigger>
+            <name type="String">String 变量名称</name>
+            <value type="Integer">-1/0/1 -1:变量减小时触发 1:变量增大触发 0:变量减小变大都触发</value>
+        </varChangeTrigger>
+        <varLargerTrigger>
+            <var type="String">String 自定义变量名</var>
+            <value type="Integer">Integer 自定义变量名的值</value>
+        </varLargerTrigger>
+        <varSmallerTrigger>
+            <var type="String">String 自定义变量名</var>
+            <value type="Integer">Integer 自定义变量名的值</value>
+        </varSmallerTrigger>
+        <varTrigger>
+            <var type="String">String 自定义变量名</var>
+            <value type="Integer">Integer 自定义变量名的值</value>
+        </varTrigger>
+        <vmDieTrigger>
+            <monsterId type="Integer">Integer 填写虚拟怪的在怪物表中的编号</monsterId>
+        </vmDieTrigger>
+        <vmHpLowerTrigger>
+            <monsterId type="Integer">Integer 填写虚拟怪的在怪物表中的编号</monsterId>
+            <percent type="PoInteger">positiveInteger 1-99 血量百分比</percent>
+        </vmHpLowerTrigger>
+        <vmSpecialValueZeroTrigger>
+            <type type="Integer">0/1/2/3 0:气绝 1:麻痹 2:睡眠 3:分部件破坏</type>
+            <chartType type="PoInteger">positiveInteger 虚拟怪的怪物编号(怪物表对应的ID)</chartType>
+        </vmSpecialValueZeroTrigger>
     </Type>
     

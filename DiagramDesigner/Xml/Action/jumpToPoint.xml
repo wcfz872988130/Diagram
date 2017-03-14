@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>jumpToPoint</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <offset type="String">(x,z) 表示位移地点相对目标位置的偏移,以目标到怪物的连线方向为z轴正向,以目标到怪物的连线方向的右手方向为x轴正向;当目标为自身时,以自身yaw值为z轴正向</offset>
+            <actionNames type="String">('actionId1','actionId2',param1,param2)actionId1为位移中播放的动作;actionId2为位移后的收手动作;param1用于处理主角怪的位移,当主角怪的翻滚带有美术位移时,此参数填1可以去掉美术位移;param2填1表示位移过程中隐身;          </actionNames>
+            <time type="Float">Float 位移持续时间</time>
+            <turnDirection type="Float">Float 位移中转动面向的时间点(当turnDirectionTime>time时,不转面向)</turnDirection>
+            <duration type="Float">Float 整条AI的持续时间</duration>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

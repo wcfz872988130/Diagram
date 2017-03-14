@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>hpCompare</title>
+        <input>
+            <trigger type="SingleLinker">连接一个触发器</trigger>
+            <order type="OrderInteger">Integer 条件的顺序</order>
+            <hpValue type="Integer">Integer 0-99 血量百分比</hpValue>
+        </input>
+        <output>
+            <conditionExp type="SingleLinker">条件判断</conditionExp>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

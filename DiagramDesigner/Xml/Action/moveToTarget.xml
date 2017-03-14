@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>moveToTarget</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <dist type="Float">Float 追击到离目标多少范围之内</dist>
+            <maxTime type="Float">Float 追击多长时间后仍未达到要求便放弃追击重新思考</maxTime>
+            <speed type="Float">Float 怪物追击速度(填0取原型表run速度)</speed>
+            <dist2 type="Float">Float 清仇恨距离 0或不填, 表示无论距离多远,与目标路点是否通,均会追击,不清仇恨大于0,表示当超过这个距离并且路点不通时,怪物会放弃追击并清除该目标的仇恨</dist2>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

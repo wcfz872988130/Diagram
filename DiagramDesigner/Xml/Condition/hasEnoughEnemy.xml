@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>hasEnoughEnemy</title>
+        <input>
+            <trigger type="SingleLinker">连接一个触发器</trigger>
+            <order type="OrderInteger">Integer 条件的顺序</order>
+            <pNumber type="Integer">Integer 数量判断的依据</pNumber>
+            <minDist type="Integer">Integer 最小距离</minDist>
+            <maxDist type="Integer">Integer 最大距离</maxDist>
+            <minAngle type="Integer">Integer 最小角度</minAngle>
+            <maxAngle type="Integer">Integer 最大角度</maxAngle>
+        </input>
+        <output>
+            <conditionExp type="SingleLinker">条件判断</conditionExp>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

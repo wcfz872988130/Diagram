@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>posSwap</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <avatars type="Integer">0或1或2 填写目标选择函数编号，被交换位置的玩家List</avatars>
+            <effectId type="PoInteger">positiveInteger 被交换位置玩家身上播的特效编号</effectId>
+            <duration type="Float">Float AI执行的时间，怪物在这段时间内idle</duration>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

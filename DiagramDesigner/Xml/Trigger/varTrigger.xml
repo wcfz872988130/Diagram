@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>varTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+            <var type="String">String 自定义变量名</var>
+            <value type="Integer">Integer 自定义变量名的值</value>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>modelModify</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <modelName type="String">String 怪物的模型部位名称</modelName>
+            <operation type="String">String 龙尾有hide,即隐藏:武器写t1,破坏;</operation>
+            <type type="PoInteger">PositiveInteger 默认1,龙尾隐藏;2,武器破坏;</type>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

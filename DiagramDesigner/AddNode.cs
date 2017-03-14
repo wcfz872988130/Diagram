@@ -58,7 +58,23 @@ namespace DiagramDesigner
 
             newItem = new DesignerItem();
             ListView listView1 = new ListView();
-            
+            newItem.IDName = nodeName;
+            if (nodeName.Equals("AndExp"))
+            {
+                newItem.ItemType = "ConditionAndExp";
+            }
+            else if (nodeName.Equals("OrExp"))
+            {
+                newItem.ItemType = "ConditionOrExp";
+            }
+            else if (nodeName.Equals("Exp"))
+            {
+                newItem.ItemType = "ConditionExpResult";
+            }
+            else
+            {
+                newItem.ItemType = nodeFileName;
+            }
             listView1.Width = 80;
             for (int i = 0; i < parse.input.Length; ++i)
             {
@@ -84,23 +100,6 @@ namespace DiagramDesigner
             groupBox.Content = grid;
             border.Child = groupBox;
             newItem.Content = border;
-            newItem.IDName = nodeName;
-            if(nodeName.Equals("AndExp"))
-            {
-                newItem.ItemType = "ConditionAndExp";
-            }
-            else if (nodeName.Equals("OrExp"))
-            {
-                newItem.ItemType = "ConditionOrExp";
-            }
-            else if (nodeName.Equals("Exp"))
-            {
-                newItem.ItemType = "ConditionExpResult";
-            }
-            else
-            {
-                newItem.ItemType = nodeFileName;
-            }
             
             newItem.Width = border.Width + 6;
             newItem.Height = border.Height + 10;
@@ -145,6 +144,7 @@ namespace DiagramDesigner
                 listItem.Children.Add(textBlock);
 
                 Connector co1 = new Connector();
+                DrawComponent.GetConnectorType(co1, item.ItemType, direction);
                 co1.Orientation = direction == "left" ? (ConnectorOrientation.Left) : (ConnectorOrientation.Right);
                 co1.DataType = GetDataType(connectorType);
                 co1.Content = listItem;

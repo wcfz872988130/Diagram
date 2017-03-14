@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectFriendByFlags</title>
+        <input>
+        	<radii type="PoNumber">positiveNumber 选择半径</radii>
+        	<flagList type="String">(1,)</flagList>
+        	<type type="Integer">0或1 1:选出带有的2:选出不带有的</type>
+        </input>
+    </node>

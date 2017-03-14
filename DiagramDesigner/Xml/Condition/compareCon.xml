@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>compareCon</title>
+        <input>
+            <trigger type="SingleLinker">连接一个触发器</trigger>
+            <order type="OrderInteger">Integer 条件的顺序</order>
+            <num type="PoInteger">positiveInteger 传入用于比较的第二个数值</num>
+            <type type="Integer">Integer -1/0/1 小于/等于/大于</type>
+        </input>
+        <output>
+            <conditionExp type="SingleLinker">条件判断</conditionExp>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

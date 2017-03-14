@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>varChangeTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+            <name type="String">String 变量名称</name>
+            <value type="Integer">-1/0/1 -1:变量减小时触发 1:变量增大触发 0:变量减小变大都触发</value>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

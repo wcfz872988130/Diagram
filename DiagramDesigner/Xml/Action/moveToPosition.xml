@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>moveToPosition</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <pos type="String">(x,y,z) 填写目标点的坐标</pos>
+            <maxTime type="Float">Float 代表移动多长时间后仍未达到要求便放弃追击重新思考</maxTime>
+            <speed type="Float">Float 表示怪物移动的速度</speed>
+            <action type="String">("1501,") 怪物移动过程中播放的动作,按照顺序播放动作,如果是循环动作,只能填一个</action>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

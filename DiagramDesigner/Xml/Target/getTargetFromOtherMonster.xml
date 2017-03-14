@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>getTargetFromOtherMonster</title>
+        <input>
+        	<monsterCharType type="PoInteger">positiveInteger 怪物在怪物表中的ID</monsterCharType>
+        </input>
+    </node>

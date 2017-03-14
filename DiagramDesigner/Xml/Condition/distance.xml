@@ -3,9 +3,9 @@
         <title>distance</title>
         <input>
             <trigger type="SingleLinker">连接一个触发器</trigger>
-            <order type="OrderInteger">条件的顺序</order>
-            <minDist type="Integer">最小距离</minDist>
-            <maxDist type="Integer">最大距离</maxDist>
+            <order type="OrderInteger">Integer 条件的顺序</order>
+            <minDist type="Integer">Integer 最小距离</minDist>
+            <maxDist type="Integer">Integer 最大距离</maxDist>
         </input>
         <output>
         	<conditionExp type="SingleLinker">条件判断</conditionExp>

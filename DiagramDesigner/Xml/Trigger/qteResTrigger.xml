@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>qteResTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+        	<qteId type="Integer">Integer</qteId>
+        	<res type="Integer">0/1 0:失败触发 1:成功触发</res>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

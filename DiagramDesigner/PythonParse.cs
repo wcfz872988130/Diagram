@@ -246,6 +246,13 @@ namespace DiagramDesigner
             for (int i = 0; i < triggerList[2].outputValue.Count; ++i)
             {
                 MyTextBox tempTextBox = triggerList[2].outputValue[i];
+                //if (tempTextBox.type == "Range" || tempTextBox.type == "Vec3")
+                //{
+                //    List<int> paramList = parseString(tempTextBox.propertyValue);
+                //    IronPython.Runtime.PythonTuple paramTuple = new IronPython.Runtime.PythonTuple(paramList);
+                //    Trigger.Add(paramTuple);
+                //}
+                //else { Trigger.Add(tempTextBox.propertyValue); }
                 Trigger.Add(tempTextBox.propertyValue);
             }
             unit["trigger"] = Trigger;
@@ -311,7 +318,7 @@ namespace DiagramDesigner
             ////action////
 
             ////exp////
-            if (andOrder.Count <= 1 && orOrder.Count == 0)
+            if (andOrder.Count > 0 &&andOrder.Count <= 1 && orOrder.Count == 0)
             {
                 unit["conditionExp"] = andOrder[1] == "True" ? true : false;
             }
@@ -326,7 +333,7 @@ namespace DiagramDesigner
                 }
 
                 IronPython.Runtime.List andList = new IronPython.Runtime.List();
-
+                int andLength = andOrder.Count;
                 var newdicSort = from objDic in andOrder orderby objDic.Key ascending select objDic;
                 int lastValue = 0;
                 foreach (KeyValuePair<int, string> kvp in newdicSort)
@@ -344,6 +351,10 @@ namespace DiagramDesigner
                         andList.Add(judge);
                         lastValue = kvp.Key;
                     }
+                }
+                if (andList.Count == andLength && orList.Count > 0)
+                {
+                    andList.Add(orList);
                 }
 
                 IronPython.Runtime.PythonTuple expTuple = new IronPython.Runtime.PythonTuple(andList);
@@ -372,6 +383,18 @@ namespace DiagramDesigner
 
             data[newID] = unit;
             exportCode(data, "monster_ai_data.py");
+        }
+
+        private static List<int> parseString(string input)
+        {
+            List<int> result = new List<int>();
+            string[] splitResult = input.Split(',');
+            for (int i = 0; i < splitResult.Length; ++i)
+            {
+                try { result.Add(Convert.ToInt32(splitResult[i])); }
+                catch (Exception e) { throw e; }
+            }
+            return result;
         }
 
         private static void Monster_Data(DesignerItem monster, int aiID)
@@ -406,7 +429,10 @@ namespace DiagramDesigner
                     for (int i = 0; i < tuple.Count; ++i)
                     {
                         int exitAIID = Convert.ToInt32(tuple[i]);
-                        aiIDList.Add(exitAIID);
+                        if(!aiIDList.Contains(exitAIID))
+                        {
+                            aiIDList.Add(exitAIID);
+                        }
                     }
                 }
             }
@@ -574,7 +600,7 @@ namespace DiagramDesigner
                         for (int j = 0; j < paramList.Count; ++j)
                         {
                             string convertString = Convert.ToString(paramList[j]);
-                            if(Regex.IsMatch(convertString, @"^(\-|\+)?\d+(\.\d+)?$"))
+                            if(Regex.IsMatch(convertString, @"^(\-|\+)?\d+(\.\d+)?$") || Regex.IsMatch(convertString, @"\(\.*\)"))
                             {
                                 phraseThree += convertString;
                             }
@@ -591,12 +617,12 @@ namespace DiagramDesigner
                     else 
                     {
                         string convertString = Convert.ToString(nodeValue[kvp]);
-                        if (Regex.IsMatch(convertString, @"^\d+$") || nodeValue[kvp] is IronPython.Runtime.PythonTuple)
+                        if (Regex.IsMatch(convertString, @"^(\-|\+)?\d+(\.\d+)?$") || nodeValue[kvp] is IronPython.Runtime.PythonTuple)
                         {
-                            phraseThree = Convert.ToString(nodeValue[kvp]) + ", ";
+                            phraseThree = convertString + ", ";
                         }
                         else
-                            phraseThree = "'" + Convert.ToString(nodeValue[kvp]) + "'" + ", ";
+                            phraseThree = "'" + convertString + "'" + ", ";
                     }
                     phraseValue += (phraseTwo + phraseThree);
                 }

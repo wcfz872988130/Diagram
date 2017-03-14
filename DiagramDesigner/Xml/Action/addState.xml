@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>addState</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <stateID type="PoInteger">PositiveInteger 转身动作的ID,ID不填时直接转</stateID>
+            <lv type="PoInteger">PositiveInteger 状态的等级</lv>
+            <time type="Float">Float 状态持续时间</time>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

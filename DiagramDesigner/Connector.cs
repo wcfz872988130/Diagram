@@ -19,6 +19,9 @@ namespace DiagramDesigner
         public bool isStart { get; set; }
         public Guid nodeProperty { get; set; }
 
+        public string NextType { get; set;}
+        public string SelfType { get; set; }
+
         public bool ConnectorHasConnected
         {
             get { return connectorhasconnected; }

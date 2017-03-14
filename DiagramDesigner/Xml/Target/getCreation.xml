@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>getCreation</title>
+        <input>
+            <cid type="PoInteger">positiveInteger 创生的技能编号</cid>
+        </input>
+    </node>

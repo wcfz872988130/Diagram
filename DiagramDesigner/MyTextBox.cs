@@ -64,8 +64,19 @@ namespace DiagramDesigner
             switch (type)
             {
                 case "Integer":
+                    Regex regex = new Regex(@"^[+-]*\d+$");
+                    if (!regex.IsMatch(inputContent) && inputContent != "")
+                    {
+                        MessageBox.Show("请输入整数类型");
+                    }
+                    else
+                    {
+                        propertyValue = inputContent;
+                    }
+                    break;
+                case "PoInteger":
                     Regex regex0 = new Regex("^[0-9]*[1-9][0-9]*$");
-                    if (!regex0.IsMatch(inputContent))
+                    if (!regex0.IsMatch(inputContent) && inputContent != "")
                     {
                         MessageBox.Show("请输入正整数类型");
                     }
@@ -76,7 +87,7 @@ namespace DiagramDesigner
                     break;
                 case "Float":
                     Regex regex1 = new Regex(@"^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$");
-                    if (!regex1.IsMatch(inputContent))
+                    if (!regex1.IsMatch(inputContent) && inputContent != "")
                     {
                         MessageBox.Show("请输入浮点数类型");
                     }
@@ -86,15 +97,13 @@ namespace DiagramDesigner
                     }
                     break;
                 case "String":
-                    Regex regex2 = new Regex(@"^[0-9]*$");
-                    if (!regex2.IsMatch(inputContent))
-                    {
-                        MessageBox.Show("请输入正确格式！");
-                    }
-                    else
-                    {
-                        propertyValue = inputContent;
-                    }
+                    propertyValue = inputContent;
+                    break;
+                case "Range":
+                    propertyValue = inputContent;
+                    break;
+                case "Vec3":
+                    propertyValue = inputContent;
                     break;
                 case "InputInteger":
                     Regex regex3 = new Regex("^[0-9]*[1-9][0-9]*$");
@@ -121,6 +130,17 @@ namespace DiagramDesigner
                     {
                         int num = int.Parse(inputContent);
                         ParentDesignerItem.ItemOrder = num;
+                    }
+                    break;
+                case "PoNumber":
+                    Regex regex5 = new Regex(@"^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$");
+                    if (!regex5.IsMatch(inputContent) && inputContent != "")
+                    {
+                        MessageBox.Show("请输入正数类型");
+                    }
+                    else
+                    {
+                        propertyValue = inputContent;
                     }
                     break;
             }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>chatWithTgtName</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <msgId type="string">string 引用喊话表编号,如果要传人名,此喊话中必须带%s</msgId>
+            <channel type="PoInteger">PositiveInteger 左下角的频道编号：</channel>
+            <tgtID type="Integer">Integer 引用目标玩家entityId,如果得到为空,则不喊话:如果填-1,则直接喊出那句话的字符串</tgtID>
+            <bubble type="Integer">Integer 0,表示不冒泡,1表示冒泡</bubble>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

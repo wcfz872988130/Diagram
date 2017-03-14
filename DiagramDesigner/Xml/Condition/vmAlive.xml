@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>vmAlive</title>
+        <input>
+            <trigger type="SingleLinker">连接一个触发器</trigger>
+            <order type="OrderInteger">Integer 条件的顺序</order>
+            <num type="Integer">Integer 填写虚拟怪的在怪物表中的编号</num>
+        </input>
+        <output>
+            <conditionExp type="SingleLinker">条件判断</conditionExp>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

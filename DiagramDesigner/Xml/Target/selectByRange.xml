@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>selectByRange</title>
+        <input>
+            <minDist type="Float">Float 距离最小值</minDist>
+            <maxDist type="Float">Float 距离最大值</maxDist>
+        </input>
+    </node>

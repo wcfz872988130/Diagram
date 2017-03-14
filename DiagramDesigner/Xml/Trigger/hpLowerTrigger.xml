@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>hpLowerTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+            <percent type="PoInteger">positiveInteger 1-99 血量百分比</percent>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

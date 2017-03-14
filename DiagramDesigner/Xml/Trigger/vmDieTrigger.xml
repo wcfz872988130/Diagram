@@ -3,6 +3,7 @@
         <title>vmDieTrigger</title>
         <input>
         	<monster type="SingleLinker">连接怪物</monster>
+        	<monsterId type="Integer">Integer 填写虚拟怪的在怪物表中的编号</monsterId>
         </input>
         <output>
             <condition type="MultiLinker">连接一个或多个条件</condition>

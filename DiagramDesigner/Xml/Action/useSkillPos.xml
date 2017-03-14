@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>useSkillPos</title>
+        <input>
+            <conditionExp type="SingleLinker">连接条件判断</conditionExp>
+            <order type="OrderInteger">OrderInteger 动作的顺序</order>
+            <skillID type="Integer">Integer 技能编号</skillID>
+            <skillLv type="Integer">Integer 技能等级</skillLv>
+            <pos type="String">(x,y,z) 技能释放时传入的坐标</pos>
+            <time type="Float">Float 技能持续时间</time>
+        </input>
+        <output>
+            <target type="Combo">寻找目标</target>
+        </output>
+    </node>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>aiTrigger</title>
+        <input>
+        	<monster type="SingleLinker">连接怪物</monster>
+        	<triggerNo type="Integer">Integer 触发这条BOSS AI的副本\地宫AI编号</triggerNo>
+        </input>
+        <output>
+            <condition type="MultiLinker">连接一个或多个条件</condition>
+        </output>
+    </node>

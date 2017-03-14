@@ -38,6 +38,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon-20170314021643536.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="IronPython">
       <HintPath>..\packages\IronPython.2.7.7\lib\Net40\IronPython.dll</HintPath>
@@ -327,6 +330,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon-20170314021643536.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

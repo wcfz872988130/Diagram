@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <node>
+        <title>getEntityByCharType</title>
+        <input>
+            <entityCharType type="PoInteger">positiveInteger 单位的charType</entityCharType>
+            <range type="PoInteger">positiveInteger 搜索的范围</range>
+        </input>
+    </node>
